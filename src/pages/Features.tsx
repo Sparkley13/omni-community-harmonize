@@ -52,9 +52,11 @@ const Features = () => {
                   />
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full" onClick={() => showFeatureDemo("Éditeur Visuel")}>
-                    Essayer
-                  </Button>
+                  <Link to="/editor" className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Essayer maintenant
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
 
