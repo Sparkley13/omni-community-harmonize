@@ -59,6 +59,13 @@
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
 /* Custom styling */
 .text-gradient {
   background-clip: text;
@@ -127,9 +134,70 @@
   animation: slideInFromBottom 0.5s ease-out forwards;
 }
 
-/* Staggered animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive mobile menu animation */
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+.mobile-menu-animate {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Button gradient hover effect */
+.gradient-button {
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.gradient-button:hover {
+  background-position: right center;
+}
+
+/* Image hover zoom effect */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Feature card hover underline effect */
+.feature-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  transition: width 0.3s ease;
+}
+
+.feature-card:hover::after {
+  width: 100%;
+}
